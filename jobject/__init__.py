@@ -1,7 +1,7 @@
 # coding=utf8
-"""JObject
+"""jobject
 
-JObject: A dictionary replacement that gives additional access to data using C
+jobject: A dictionary replacement that gives additional access to data using C
 struct notation, just like JavaScript Objects
 """
 
@@ -10,10 +10,22 @@ __copyright__	= "Ouroboros Coding Inc."
 __email__		= "chris@ouroboroscoding.com"
 __created__		= "2023-03-24"
 
-class JObject(dict):
-	"""JObject
+# Python imports
+import warnings
 
-	Class that represents the data, the replacement for dict
+def JObject(*args: list, **kwargs: dict):
+	warnings.simplefilter('always', DeprecationWarning)  # turn off filter
+	warnings.warn(
+		'Call to deprecated function JObject(). use jobject() instead',
+		category = DeprecationWarning,
+		stacklevel = 2)
+	warnings.simplefilter('default', DeprecationWarning)  # reset filter
+	return jobject(*args, **kwargs)
+
+class jobject(dict):
+	"""jobject
+
+	Class that represents the dict
 
 	Extends:
 		dict
@@ -22,20 +34,23 @@ class JObject(dict):
 	def __init__(self, *args: list, **kwargs: dict):
 		"""Constructor
 
-		JObject() -> new empty object
+		jobject()
+			new empty object
 
-		JObject(mapping) -> new object initialized from a mapping object's (key,
-		value) pairs
+		jobject(mapping)
+			new object initialized from a mapping object's (key, value) pairs
 
-		JObject(iterable) -> new object initialized as if via:
-			d = {} for k, v in iterable:
-				d[k] = v
+		jobject(iterable)
+			new object initialized as if via:
+				d = {} for k, v in iterable:
+					d[k] = v
 
-		JObject(**kwargs) -> new object initialized with the name=value
-		pairs in the keyword argument list. For example: JObject(one=1, two=2)
+		jobject(**kwargs)
+			new object initialized with the name=value pairs in the keyword
+			argument list. For example: jobject(one=1, two=2)
 
 		Returns:
-			JObject
+			jobject
 		"""
 
 		# Go through all the args and update the data one at a time
@@ -55,23 +70,23 @@ class JObject(dict):
 		"""Concert
 
 		Takes a value and makes sure it, or any children within it, that are
-		dict instances, are turned into JObject instances instead
+		dict instances, are turned into jobject instances instead
 
 		Arguments:
 			v (any): The value to convert
 
 		Returns:
-			JObject | any
+			jobject | any
 		"""
 
 		# Get the type of the object
 		t = type(v)
 
-		# If we got a JObject, return it as is
+		# If we got a jobject, return it as is
 		if t == cls:
 			return v
 
-		# If we got a dict, convert it to a JObject
+		# If we got a dict, convert it to a jobject
 		if isinstance(v, dict):
 			return cls(v)
 
@@ -105,7 +120,7 @@ class JObject(dict):
 		try:
 			return self.__getitem__(name)
 		except KeyError:
-			raise AttributeError(name + ' not in JObject')
+			raise AttributeError(name + ' not in jobject')
 
 	def __setattr__(self, name: str, value: any) -> None:
 		"""Set Attribute
@@ -124,7 +139,7 @@ class JObject(dict):
 
 		Implements Python magic method __setitem__ in order to override the
 		base setting of items on the instances. We want to make sure anything
-		passed to this that has a dict is converted to a JObject
+		passed to this that has a dict is converted to a jobject
 
 		Arguments:
 			key (any): The key to store the value under
