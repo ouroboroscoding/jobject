@@ -5,8 +5,10 @@ with open('README.md', 'r') as oF:
 
 setup(
 	name='jobject',
-	version='1.0.0',
-	description='JObject: A dictionary replacement that gives additional access to data using C struct notation, just like JavaScript Objects',
+	version='1.0.1',
+	description='jobject: A dictionary replacement that gives additional ' \
+				'access to data using C struct notation, just like ' \
+				'JavaScript Objects',
 	long_description=long_description,
 	long_description_content_type='text/markdown',
 	url='https://github.com/ouroboroscoding/jobject',
