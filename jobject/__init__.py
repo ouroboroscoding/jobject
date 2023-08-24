@@ -120,7 +120,7 @@ class jobject(dict):
 		try:
 			return self.__getitem__(name)
 		except KeyError:
-			raise AttributeError(name + ' not in jobject')
+			raise AttributeError(name, '%s not in jobject' % name)
 
 	def __setattr__(self, name: str, value: any) -> None:
 		"""Set Attribute
