@@ -67,7 +67,7 @@ class jobject(dict):
 
 	@classmethod
 	def convert(cls, v: any) -> any:
-		"""Concert
+		"""Convert
 
 		Takes a value and makes sure it, or any children within it, that are
 		dict instances, are turned into jobject instances instead
