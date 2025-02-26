@@ -102,6 +102,26 @@ class jobject(dict):
 		# Whatever we have, return it as is
 		return v
 
+	def __delattr__(self, name: str) -> any:
+		"""Delete Attribute
+
+		Implements Python magic method __delattr__ to give object notation
+		access to dictionaries
+
+		Arguments:
+			name (str): The dict key to delete
+
+		Raises:
+			AttributeError
+
+		Returns:
+			any
+		"""
+		try:
+			return self.__delitem__(name)
+		except KeyError:
+			raise AttributeError(name, '%s not in jobject' % name)
+
 	def __getattr__(self, name: str) -> any:
 		"""Get Attribute
 

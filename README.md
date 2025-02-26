@@ -1,5 +1,4 @@
 # jobject
-
 [![pypi version](https://img.shields.io/pypi/v/jobject.svg)](https://pypi.org/project/jobject) ![MIT License](https://img.shields.io/pypi/l/jobject.svg)
 
 jobject: A dictionary replacement that gives additional access to data using C struct notation, just like JavaScript Objects
