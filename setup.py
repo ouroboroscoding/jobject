@@ -5,7 +5,7 @@ with open('README.md', 'r') as oF:
 
 setup(
 	name='jobject',
-	version='1.0.2',
+	version='1.0.3',
 	description='jobject: A dictionary replacement that gives additional ' \
 				'access to data using C struct notation, just like ' \
 				'JavaScript Objects',
