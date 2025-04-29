@@ -5,7 +5,7 @@ with open('README.md', 'r') as oF:
 
 setup(
 	name='jobject',
-	version='1.0.3',
+	version='1.0.4',
 	description='jobject: A dictionary replacement that gives additional ' \
 				'access to data using C struct notation, just like ' \
 				'JavaScript Objects',
@@ -16,11 +16,11 @@ setup(
 		'Source': 'https://github.com/ouroboroscoding/jobject',
 		'Tracker': 'https://github.com/ouroboroscoding/jobject/issues'
 	},
-	keywords=['javascript', 'object', 'struct'],
+	keywords=[ 'javascript', 'object', 'struct' ],
 	author='Chris Nasr - Ouroboros Coding Inc.',
 	author_email='chris@ouroboroscoding.com',
 	license='MIT',
-	packages=['jobject'],
+	packages=[ 'jobject' ],
 	python_requires='>=3.10',
 	install_requires=[],
 	zip_safe=True
