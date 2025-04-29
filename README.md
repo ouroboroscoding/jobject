@@ -10,7 +10,7 @@ pip install jobject
 
 ## Import
 ```python
-from jobject import jobject
+import jobject
 
 my_dict = jobject({'one': 1, 'two': 2, 'three': 3})
 
@@ -23,7 +23,7 @@ dict notation or iteration. Because of this, jobject makes sure any dictionary
 instances that are passed to it are also converted into jobjects
 
 ```python
-from jobject import jobject
+import jobject
 
 my_dict = jobject({
 	'one': {
@@ -40,7 +40,7 @@ It will even follow lists to make sure everything under it is converted to a
 jobject
 
 ```python
-from jobject import jobject
+import jobject
 
 my_dict = jobject({
 	'array': [
@@ -56,7 +56,7 @@ print(my_dict[2].three) # prints '3'
 This even includes data set after the fact
 
 ```python
-from jobject import jobject
+import jobject
 
 my_dict = jobject()
 

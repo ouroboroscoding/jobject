@@ -11,16 +11,7 @@ __email__		= "chris@ouroboroscoding.com"
 __created__		= "2023-03-24"
 
 # Python imports
-import warnings
-
-def JObject(*args: list, **kwargs: dict):
-	warnings.simplefilter('always', DeprecationWarning)  # turn off filter
-	warnings.warn(
-		'Call to deprecated function JObject(). use jobject() instead',
-		category = DeprecationWarning,
-		stacklevel = 2)
-	warnings.simplefilter('default', DeprecationWarning)  # reset filter
-	return jobject(*args, **kwargs)
+import sys
 
 class jobject(dict):
 	"""jobject
@@ -169,3 +160,10 @@ class jobject(dict):
 			None
 		"""
 		return super().__setitem__(key, self.convert(value))
+
+# Allow use of import jobject instead of from jobject import jobject
+if sys.modules[__name__] is jobject:
+	pass
+else:
+	sys.modules[__name__] = jobject
+	sys.modules[__name__].jobject = jobject
