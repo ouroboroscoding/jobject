@@ -1,0 +1,25 @@
+[build-system]
+requires = [ "hatchling" ]
+build-backend = "hatchling.build"
+
+[project]
+name = "jobject"
+version = "1.0.5"
+description = "jobject: A dictionary replacement that gives additional access to data using C struct notation, just like JavaScript Objects"
+authors = [
+    {name = "Chris Nasr - Ouroboros Coding Inc.", email = "chris@ouroboroscoding.com"}
+]
+maintainers = [
+    {name = "Chris Nasr - Ouroboros Coding Inc.", email = "chris@ouroboroscoding.com"}
+]
+license = "MIT"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.urls]
+Source = "https://github.com/ouroboroscoding/jobject"
+Tracker = "https://github.com/ouroboroscoding/jobject/issues"
+
+[tool.hatch.build]
+packages = [ "jobject" ]
