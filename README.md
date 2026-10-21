@@ -1,7 +1,15 @@
 # jobject
-[![pypi version](https://img.shields.io/pypi/v/jobject.svg)](https://pypi.org/project/jobject) ![MIT License](https://img.shields.io/pypi/l/jobject.svg)
+[![pypi version](https://img.shields.io/pypi/v/jobject.svg)](https://pypi.org/project/jobject)
+![MIT License](https://img.shields.io/pypi/l/jobject.svg)
 
-jobject: A dictionary replacement that gives additional access to data using C struct notation, just like JavaScript Objects
+jobject: A dictionary replacement that gives additional access to data using C
+struct notation, just like JavaScript Objects.
+
+Please see [LICENSE](https://github.com/ouroboroscoding/config/blob/main/LICENSE)
+for further information.
+
+See [Releases](https://github.com/ouroboroscoding/config/blob/main/releases.md)
+for changes from release to release.
 
 ## Installation
 ```bash
